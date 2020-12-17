@@ -17,6 +17,15 @@
     <input type="submit" value="Go to wiki page of {{dataList['NAME']}}" />
     </form>
 
+    <immune id="Immune">
+        <p>Immune:</p>
+        <ul>
+            {% for type in dataList['EFFECTIVENESS']['0'] %}
+            <li>{{ type }}</li>
+        {% endfor %}
+        </ul>
+
+    </immune>
     <Quarter id = "Quarter">
         <p>Quarter Effectiveness:</p>
         <ul>
@@ -77,6 +86,13 @@
             <td id="TOTAL_STATS">{{dataList['STATS']['TOTAL']}}</td>
         </tr>
     </table>
+
+    <div>
+        <p>Abilties:</p>
+        <p>Abilty 1: {{dataList['ABILITIES']['ABILITY1']}}</p>
+        <p>Abilty 2: {{dataList['ABILITIES']['ABILITY2']}}</p>
+        <p>Hidden Abilty: {{dataList['ABILITIES']['ABILITY HIDDEN']}}</p>
+    </div>
     </body>
     <script>
         autocomplete(document.getElementById("pokeInput"), pokemonNames);
