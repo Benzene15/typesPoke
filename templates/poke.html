@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="../static/js/autocomplete.js"></script>
+        <script type="text/javascript" src="../static/js/newPokePage.js"></script>
+        <link rel="stylesheet" href="../static/styles/poke.css">
+    </head>
+    <body>
+    <p style="text-align: center; font-size:30px; color:red;">{{dataList['NAME']}}</p>
+    <form style = "position: absolute; top: 0%;"autocomplete="off" action="">
+        <div class="autocomplete" style="width:300px;">
+          <input id="pokeInput" type="text" name="pokeInput" placeholder="Pokemon" >
+        </div>
+        <button style = "position: absolute; top: 0%; left: 57%" id="pokeBtn" type="button" onclick="openNewPokePage()">Submit</button>
+    </form>
+    <form action="https://bulbapedia.bulbagarden.net/wiki/{{dataList['NAME']}}_(Pok%C3%A9mon)">
+    <input type="submit" value="Go to wiki page of {{dataList['NAME']}}" />
+    </form>
+
+    <Quarter id = "Quarter">
+        <p>Quarter Effectiveness:</p>
+        <ul>
+            {% for type in dataList['EFFECTIVENESS']['1/4'] %}
+            <li>{{ type }}</li>
+        {% endfor %}
+        </ul>
+    </Quarter>
+    <Half id = "Half">
+        <p>Half Effectiveness:</p>
+        <ul>
+            {% for type in dataList['EFFECTIVENESS']['1/2'] %}
+            <li>{{ type }}</li>
+        {% endfor %}
+        </ul>
+    </Half>
+    <Normal id = "Normal">
+        <p>Normal Effectiveness:</p>
+        <ul>
+            {% for type in dataList['EFFECTIVENESS']['1'] %}
+            <li>{{ type }}</li>
+        {% endfor %}
+        </ul>
+    </Normal>
+    <Double id = "Double">
+        <p>Double Effectiveness:</p>
+        <ul>
+            {% for type in dataList['EFFECTIVENESS']['2'] %}
+            <li>{{ type }}</li>
+        {% endfor %}
+        </ul>
+    </Double>
+    <Quadruple id = "Quadruple">
+        <p>Quadruple Effectiveness:</p>
+        <ul>
+            {% for type in dataList['EFFECTIVENESS']['4'] %}
+            <li>{{ type }}</li>
+        {% endfor %}
+    </Quadruple>
+    
+    <table style="width:30%;">
+        <tr>
+            <th>HP</th>
+            <th>ATK</th>
+            <th>S. ATK</th>
+            <th>DEF</th>
+            <th>S. DEF</th>
+            <th>SPD</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td id="HP">{{dataList['STATS']['HP']}}</td>
+            <td id="ATK">{{dataList['STATS']['ATK']}}</td>
+            <td id="SP_ATK">{{dataList['STATS']['SP_ATK']}}</td>
+            <td id="DEF">{{dataList['STATS']['DEF']}}</td>
+            <td id="SP_DEF">{{dataList['STATS']['SP_DEF']}}</td>
+            <td id="SPD">{{dataList['STATS']['SPD']}}</td>
+            <td id="TOTAL_STATS">{{dataList['STATS']['TOTAL']}}</td>
+        </tr>
+    </table>
+    </body>
+    <script>
+        autocomplete(document.getElementById("pokeInput"), pokemonNames);
+    </script>
+</html>

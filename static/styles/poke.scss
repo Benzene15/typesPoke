@@ -1,0 +1,27 @@
+body {
+    background-color: darkgray;
+}
+table, th, td {
+    border: 1px solid black;
+    color: black;
+}
+#Quarter {
+    p, ul {
+        color: red;
+    }
+}
+#Half {
+    p, ul {
+        color:orange;
+    }
+}
+#Double {
+    p, ul {
+        color:green;
+    }
+}
+#Quadruple{
+    p, ul {
+        color: blue;
+    }
+}

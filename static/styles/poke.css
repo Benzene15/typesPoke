@@ -1,0 +1,20 @@
+body {
+  background-color: darkgray; }
+
+table, th, td {
+  border: 1px solid black;
+  color: black; }
+
+#Quarter p, #Quarter ul {
+  color: red; }
+
+#Half p, #Half ul {
+  color: orange; }
+
+#Double p, #Double ul {
+  color: green; }
+
+#Quadruple p, #Quadruple ul {
+  color: blue; }
+
+/*# sourceMappingURL=poke.css.map */
